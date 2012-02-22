@@ -1,0 +1,12 @@
+$def with(site, uploads)
+
+<html>
+    <body>
+        <h1>Pick the file to upload.</h1>
+        <ul>
+        $for file in uploads:
+            <li><a href="/push?site=$site&target=$file">$file</a></li>
+
+        </ul>
+    </body>
+</html>

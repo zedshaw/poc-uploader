@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <p id="waiting">You want to upload a file? Let me see if you have the uploader...</p>
+
+        <iframe id="TheUploader" src="http://localhost:8080/?site=http://zedshaw.com/uploader.html"></iframe>
+    </body>
+
+    <script>
+        function receiveMessage(event) {
+            document.getElementById("waiting").innerHTML = "Yes! You've got the uploader!"
+        }
+
+        window.addEventListener("message", receiveMessage, false);  
+
+        var uploader = document.getElementById("TheUploader");
+        var uploader_timeout = setTimeout("document.getElementById('waiting').innerHTML = 'You need to install the uploader.';", 3000);
+
+        uploader.onload = function (e) {
+            uploader.contentWindow.postMessage("hi", "*");
+            clearTimeout(uploader_timeout);
+        }
+    </script>
+</html>

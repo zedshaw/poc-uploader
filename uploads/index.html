@@ -1,0 +1,19 @@
+$def with(site)
+
+<html>
+    <body>
+        <p id="waiting">Waiting for site...</p>
+    </body>
+
+<script>
+window.addEventListener("message", receiveMessage, false);  
+
+function receiveMessage(event)  
+{
+    document.getElementById("waiting").innerHTML = 'Site $site is ready to upload a file. <a href="/upload?site=$site" target="_top">click here to do it.</a>';
+    event.source.postMessage("fuck yeah", event.origin);
+}  
+</script>
+</html>
+
+
