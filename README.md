@@ -24,7 +24,7 @@ I've opened up a bucket on S3 so people can try it out.  If it gets abused
 I'm going to close it up.  Oh, I'm sure it'll last a day but here's how to try
 it.
 
-1. git clone https://github.com/zedshaw/poc-uploader.git
+1. git clone git://github.com/zedshaw/poc-uploader.git
 2. cd poc-uploader
 3. pip install lpthw.web boto
 4. python app.py
