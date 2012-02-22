@@ -16,6 +16,27 @@ Let's hope they read this, and then get their head out of their ass to make it a
 
 But, with that being said, I came up with this independently and then was told they had it.
 
+How Does It Work?
+=================
+
+Basically the receiver site creates an iframe to localhost:8080 and if it loads
+it sends a pushMessage to it.  The poc-uploader is then a little Python app that
+hangs out there and when it gets a pushMessage, sends a reply to tell the parent
+site it exists.
+
+After this handshake, the user can click a link and go to the localhost:8080 app
+to pick a file and upload it.  Currently it just uploads to a fixed S3 bucket
+but that information could be passed along with the initial push messages.
+
+Once the poc-uploader has pushed it to S3 it then tell the user and sends
+them back to the main site.
+
+Pretty simple, and it lets the parent site find out if the user has the
+uploader installed and tell them to install it or run it.
+
+Of course, to make this generally useful you'd need some more features and
+a good security review, but this is the general first idea.
+
 
 Trying It Out
 =============
