@@ -27,6 +27,9 @@ site it exists.
 After this handshake, the user can click a link and go to the localhost:8080 app
 to pick a file and upload it.  Currently it just uploads to a fixed S3 bucket
 but that information could be passed along with the initial push messages.
+It also is just picking files in the local uploads directory in poc-uploader/uploads,
+but since it's localhost you could do almost anything.  That's also kind of
+scary so...yeah.
 
 Once the poc-uploader has pushed it to S3 it then tell the user and sends
 them back to the main site.
