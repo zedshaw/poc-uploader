@@ -109,6 +109,11 @@ with the following features you'll have something:
     uploads.
 5. Doing all this crap for target sites so they just get pure uploads with
     nothing to worry about.
+6. Improved *native* minimalist GUI for managing the app.  Let the web
+    browser do all the actual picking so it fits with the websites,
+    but having a good installer, a tray notifier, and control panel
+    will make it easier to do other stuff.
+
 
 
 Why Don't You Do It?
